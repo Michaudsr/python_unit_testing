@@ -6,7 +6,7 @@ class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
-        self.pay = pay
+        self.pay = int(pay)
 
     @property
     def email(self):
@@ -17,9 +17,7 @@ class Employee:
         return '{} {}'.format(self.first, self.last)
 
     def apply_raise(self):
-        self.pay = int(self.pay * self.raise_amount)
+        self.pay = round(float(self.pay * self.raise_amount))
 
-steven = Employee('Steven', 'Michaud', '1000000')
 
-print(steven.email)
-print(steven.fullname)
+# steven = Employee('Steven', 'Michaud', 100000)
